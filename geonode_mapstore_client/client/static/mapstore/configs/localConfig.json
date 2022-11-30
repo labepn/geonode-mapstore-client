@@ -1390,6 +1390,14 @@
                         },
                         {
                             "type": "plugin",
+                            "name": "MapExport"
+                        },
+                        {
+                            "type": "plugin",
+                            "name": "MapImport"
+                        },
+                        {
+                            "type": "plugin",
                             "name": "Measure"
                         },
                         {
