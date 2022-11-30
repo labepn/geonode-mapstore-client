@@ -228,6 +228,8 @@
             get
         }
         */
+        localConfig.plugins.map_viewer.push({"name": "MapExport"});
+        localConfig.plugins.map_viewer.push({"name": "MapImport"});
         return _.mergeWith(localConfig, {
             // ...my override config
         }, function(objValue, srcValue, key) {
