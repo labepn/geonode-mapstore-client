@@ -322,6 +322,14 @@ export const plugins = {
             }
         }
     ),
+    MapExportPlugin: toLazyPlugin(
+        'MapExport',
+        () => import(/* webpackChunkName: 'plugins/map-export-plugin' */ '@mapstore/framework/plugins/MapExport')
+    ),
+    MapImportPlugin: toLazyPlugin(
+        'MapImport',
+        () => import(/* webpackChunkName: 'plugins/map-import-plugin' */ '@mapstore/framework/plugins/MapImport')
+    ),
     PrintTextInputPlugin: toLazyPlugin(
         'PrintTextInput',
         () => import(/* webpackChunkName: 'plugins/print-text-input-plugin' */ '@mapstore/framework/plugins/print/TextInput')
