@@ -1848,6 +1848,9 @@
                 "name": "DatasetsCatalog"
             },
             {
+                "name": "MapImport"
+            },
+            {
                 "name": "VisualStyleEditor",
                 "cfg": {
                     "showLayerProperties": true,
