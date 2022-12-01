@@ -1390,14 +1390,6 @@
                         },
                         {
                             "type": "plugin",
-                            "name": "MapExport"
-                        },
-                        {
-                            "type": "plugin",
-                            "name": "MapImport"
-                        },
-                        {
-                            "type": "plugin",
                             "name": "Measure"
                         },
                         {
@@ -1409,6 +1401,16 @@
                             "type": "plugin",
                             "name": "DatasetsCatalog",
                             "disableIf": "{!context.resourceHasPermission(state('gnResourceData'), 'change_resourcebase') && !state('isNewResource')}"
+                        },
+                        {
+                            "labelId": "gnviewer.moreMenuItem",
+                            "type": "dropdown",
+                            "items": [
+                                {
+                                    "type": "plugin",
+                                    "name": "MapImport"
+                                }
+                            ]
                         }
                     ],
                     "rightMenuItems": [
