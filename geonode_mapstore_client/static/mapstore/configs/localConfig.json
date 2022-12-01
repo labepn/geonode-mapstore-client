@@ -1401,6 +1401,16 @@
                             "type": "plugin",
                             "name": "DatasetsCatalog",
                             "disableIf": "{!context.resourceHasPermission(state('gnResourceData'), 'change_resourcebase') && !state('isNewResource')}"
+                        },
+                        {
+                            "labelId": "gnviewer.moreMenuItem",
+                            "type": "dropdown",
+                            "items": [
+                                {
+                                    "type": "plugin",
+                                    "name": "MapImport"
+                                }
+                            ]
                         }
                     ],
                     "rightMenuItems": [
@@ -1836,6 +1846,9 @@
             },
             {
                 "name": "DatasetsCatalog"
+            },
+            {
+                "name": "MapImport"
             },
             {
                 "name": "VisualStyleEditor",
