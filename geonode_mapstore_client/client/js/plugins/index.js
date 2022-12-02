@@ -17,7 +17,8 @@ import {
     AnnotationsActionButton,
     FullScreenActionButton,
     FilterLayerActionButton,
-    MapImportActionButton
+    MapImportActionButton,
+    MapExportActionButton
 } from '@js/plugins/actionnavbar/buttons';
 import { getMetadataUrl,
     getMetadataDetailUrl,
@@ -325,7 +326,15 @@ export const plugins = {
     ),
     MapExportPlugin: toLazyPlugin(
         'MapExport',
-        () => import(/* webpackChunkName: 'plugins/map-export-plugin' */ '@mapstore/framework/plugins/MapExport')
+        () => import(/* webpackChunkName: 'plugins/map-export-plugin' */ '@mapstore/framework/plugins/MapExport'),
+	{
+            containers: {
+                ActionNavbar: {
+                    name: 'MapExport',
+                    Component: MapExportActionButton
+                }
+            }
+        }
     ),
     MapImportPlugin: toLazyPlugin(
         'MapImport',

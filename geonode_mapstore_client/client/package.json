@@ -36,6 +36,7 @@
     "dompurify": "2.2.6",
     "font-awesome": "4.7.0",
     "mapstore": "file:MapStore2",
+    "postcss-loader": "^7.0.2",
     "react-helmet": "6.1.0",
     "react-intl": "2.3.0",
     "three": "0.136.0"

@@ -191,3 +191,22 @@ export const MapImportActionButton = connect(
         </Button>
     );
 });
+export const MapExportActionButton = connect(
+    () => ({}),
+    { onClick: setControlProperty.bind(null, 'mapexport', 'enabled', true) }
+)(({
+    onClick,
+    variant,
+    size
+}) => {
+    return (
+        <Button
+            variant={variant}
+            size={size}
+            onClick={() => onClick()}
+            tooltip={"mapExport.tooltip"}
+        >
+            <Message msgId="mapExport.title" />
+        </Button>
+    );
+});
