@@ -1409,6 +1409,10 @@
                                 {
                                     "type": "plugin",
                                     "name": "MapImport"
+                                },
+                                {
+                                    "type": "plugin",
+                                    "name": "MapExport"
                                 }
                             ]
                         }
