@@ -193,7 +193,7 @@ export const MapImportActionButton = connect(
 });
 export const MapExportActionButton = connect(
     () => ({}),
-    { onClick: setControlProperty.bind(null, 'mapexport', 'enabled', true) }
+    { onClick: setControlProperty.bind(null, 'export', 'enabled', true) }
 )(({
     onClick,
     variant,
