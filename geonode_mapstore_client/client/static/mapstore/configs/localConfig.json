@@ -1855,6 +1855,9 @@
                 "name": "MapImport"
             },
             {
+                "name": "MapExport"
+            },
+            {
                 "name": "VisualStyleEditor",
                 "cfg": {
                     "showLayerProperties": true,
