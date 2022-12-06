@@ -1405,6 +1405,7 @@
                         {
                             "labelId": "gnviewer.moreMenuItem",
                             "type": "dropdown",
+                            "disableIf": "{!context.resourceHasPermission(state('gnResourceData'), 'change_resourcebase') && !state('isNewResource')}",
                             "items": [
                                 {
                                     "type": "plugin",
@@ -1852,10 +1853,16 @@
                 "name": "DatasetsCatalog"
             },
             {
-                "name": "MapImport"
+                "name": "MapImport",
+		"cfg": {
+                    "disablePermission": true
+                }
             },
             {
-                "name": "MapExport"
+                "name": "MapExport",
+		"cfg": {
+                    "disablePermission": true
+                }
             },
             {
                 "name": "VisualStyleEditor",
