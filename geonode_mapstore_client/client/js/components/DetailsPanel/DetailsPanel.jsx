@@ -297,31 +297,31 @@ function DetailsPanel({
 
     const infoField = [
         {
-            "label": "Title",
+            "label": <Message msgId={"gnviewer.title"} />,
             "value": validateDataType(resource?.title)
         },
         {
-            "label": "Abstract",
+            "label": <Message msgId={"gnviewer.abstract"} />,
             "value": validateDataType(resource?.raw_abstract)?.length > 100 ? <div>{validateDataType(resource?.raw_abstract)?.substring(0, 100)}{extraContent}{' '}<a className="read-more-link" onClick={() => setReadMore(!readMore) }>{linkName}</a></div> : validateDataType(resource?.raw_abstract)
         },
         {
-            "label": "Owner",
+            "label": <Message msgId={"gnviewer.owner"} />,
             "value": validateDataType(resource?.owner?.username) && <a href={`/people/profile/${resource?.owner?.username}/`}> {(resource?.owner?.first_name !== "" && resource?.owner?.last_name !== "" ) ? (resource?.owner?.first_name + " " + resource?.owner?.last_name) : resource?.owner?.username} </a>
         },
         {
-            "label": "Created",
-            "value": validateDataType(resource?.created) && moment(resource?.created).format('MMMM Do YYYY')
+            "label": <Message msgId={"gnviewer.created"} />,
+            "value": validateDataType(resource?.created) && moment(resource?.created).format('D.MM.YYYY')
         },
         {
-            "label": "Published",
-            "value": validateDataType(resource?.date) && moment(resource?.date).format('MMMM Do YYYY')
+            "label": <Message msgId={"gnviewer.published"} />,
+            "value": validateDataType(resource?.date) && moment(resource?.date).format('D.MM.YYYY')
         },
         {
-            "label": "Last Modified",
-            "value": validateDataType(resource?.last_updated) && moment(resource?.last_updated).format('MMMM Do YYYY')
+            "label": <Message msgId={"gnviewer.lastModified"} />,
+            "value": validateDataType(resource?.last_updated) && moment(resource?.last_updated).format('D.MM.YYYY')
         },
         {
-            "label": "Resource Type",
+            "label": <Message msgId={"gnviewer.resourceType"} />,
             "value": validateDataType(resource?.resource_type) && <a href={formatHref({
                 pathname: '/search/filter/',
                 query: {
@@ -330,7 +330,7 @@ function DetailsPanel({
             })}>{resource?.resource_type}</a>
         },
         {
-            "label": "Category",
+            "label": <Message msgId={"gnviewer.category"} />,
             "value": validateDataType(resource.category?.identifier) && <a href={formatHref({
                 pathname: '/search/filter/',
                 query: {
@@ -339,7 +339,7 @@ function DetailsPanel({
             })}>{resource.category?.identifier}</a>
         },
         {
-            "label": "Keywords",
+            "label": <Message msgId={"gnviewer.keywords"} />,
             "value": validateDataType(resource?.keywords) && resource?.keywords?.map((map) => {
                 return (<a href={formatHref({
                     pathname: '/search/filter/',
@@ -350,7 +350,7 @@ function DetailsPanel({
             })
         },
         {
-            "label": "Regions",
+            "label": <Message msgId={"gnviewer.regions"} />,
             "value": validateDataType(resource?.regions) && resource?.regions?.map((map) => {
                 return (<a href={formatHref({
                     pathname: '/search/filter/',
@@ -365,51 +365,51 @@ function DetailsPanel({
 
     const extraItemsList = [
         {
-            "label": "Point of Contact",
+            "label": <Message msgId={"gnviewer.pointOfContact"} />,
             "value": <a href={`/messages/create/${resource?.poc?.pk}/`}> {(resource?.poc?.first_name !== "" && resource?.poc?.last_name !== "" ) ? (resource?.poc?.first_name + " " + resource?.poc?.last_name) : resource?.poc?.username} </a>
         },
         {
-            "label": "License",
+            "label": <Message msgId={"gnviewer.license"} />,
             "value": validateDataType(resource?.license?.name_long)
         },
         {
-            "label": "Attribution",
+            "label": <Message msgId={"gnviewer.attribution"} />,
             "value": validateDataType(resource?.attribution)
         },
         {
-            "label": "Restriction",
+            "label": <Message msgId={"gnviewer.restriction"} />,
             "value": validateDataType(resource?.restriction_code_type?.identifier)
         },
         {
-            "label": "Edition",
+            "label": <Message msgId={"gnviewer.edition"} />,
             "value": validateDataType(resource?.edition)
         },
         {
-            "label": "Maintenance Frequency",
+            "label": <Message msgId={"gnviewer.maintenanceFrequency"} />,
             "value": validateDataType(resource?.maintenance_frequency)
         },
         {
-            "label": "Language",
+            "label": <Message msgId={"gnviewer.language"} />,
             "value": validateDataType(resource?.language)
         },
         {
-            "label": "Purpose",
+            "label": <Message msgId={"gnviewer.purpose"} />,
             "value": validateDataType(resource?.raw_purpose)
         },
         {
-            "label": "Data Quality",
+            "label": <Message msgId={"gnviewer.dataQuality"} />,
             "value": validateDataType(resource?.raw_data_quality_statement)
         },
         {
-            "label": "Temporal extent",
+            "label": <Message msgId={"gnviewer.temporalExtent"} />,
             "value": (resource?.temporal_extent_start) ? resource?.temporal_extent_start + " - " : undefined  + (resource?.temporal_extent_end) ? resource?.temporal_extent_end : undefined
         },
         {
-            "label": "Spatial Representation Type",
+            "label": <Message msgId={"gnviewer.spatialRepresentationType"} />,
             "value": validateDataType(resource?.spatial_representation_type?.identifier)
         },
         {
-            "label": "Supplemental Information",
+            "label": <Message msgId={"gnviewer.supplementalInformation"} />,
             "value": validateDataType(resource?.raw_supplemental_information)
         }
     ];
@@ -602,7 +602,7 @@ function DetailsPanel({
                             <ResourceMessage type={resource?.resource_type} />
                             <AuthorInfo resource={resource} formatHref={formatHref} style={{ margin: 0 }} detailsPanel /></>}
                             {(resource?.date_type && resource?.date)
-                            && <>{' '}/{' '}{moment(resource.date).format('MMMM Do YYYY')}</>}
+                            && <>{' '}/{' '}{moment(resource.date).format('D.MM.YYYY')}</>}
                         </p>
                         }
 
