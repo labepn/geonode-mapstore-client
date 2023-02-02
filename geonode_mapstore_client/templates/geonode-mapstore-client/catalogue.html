@@ -47,6 +47,10 @@
                 {% block ms_scripts %}
                     <script id="gn-script" src="{% static 'mapstore/dist/js/gn-catalogue.js' %}?{% client_version %}"></script>
                 {% endblock %}
+                
+                {% block footer %}
+                    {% include './snippets/footer1.html' %}
+                {% endblock %}
 
                 {% block scripts %}
                     <script src="{% static "lib/js/jquery.min.js" %}"></script>
